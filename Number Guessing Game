@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main()
+{
+    int num, guess, CHANCES = 0;
+	srand(time(0)); 
+	num = rand() % 100 + 1; 
+	cout << "GAME - GUESS THE NUMBER\n\n";
+	do
+	{
+		cout << "LET'S GUESS A NUMBER: ";
+		cin >> guess;
+		CHANCES++;
+
+		if (guess > num)
+			cout << "YOUR GUESS IS TOO HIGH!!!!!!THINK A LOWER NUMBER\n\n";
+		else if (guess < num)
+			cout << "YOUR GUESS IS TOO LOW!!!!! GUESS A HIGHER NUMBER\n\n";
+		else
+			cout << "\nCorrect! YOUR NUMBER IS CORRECT AND YOU GOT IT IN " << CHANCES<< " GUESSES!\n";
+	} while (guess != num);
+
+	return 0;
+}
